@@ -23,31 +23,44 @@
         "text": {
           "type": "StructuredText",
           "config": {
-            "label": "Text",
-            "placeholder": "Text displayed adjacent to image",
+            "label": "Myself description",
+            "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading1,heading3,strong,em"
+            "multi": "paragraph,strong,em,hyperlink"
+          }
+        },
+        "subtitle": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle",
+            "placeholder": ""
+          }
+        },
+        "current_work": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Current work",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,hyperlink"
+          }
+        },
+        "hi_message": {
+          "type": "Text",
+          "config": {
+            "label": "Hi message",
+            "placeholder": "Text above my name"
+          }
+        },
+        "subtitle_2": {
+          "type": "Text",
+          "config": {
+            "label": "Subtitle 2",
+            "placeholder": ""
           }
         }
       },
-      "items": {
-        "button_link": {
-          "type": "Link",
-          "config": {
-            "label": "Button Link",
-            "placeholder": "Link for the button",
-            "allowTargetBlank": true,
-            "select": null
-          }
-        },
-        "button_label": {
-          "type": "Text",
-          "config": {
-            "label": "Button Label",
-            "placeholder": "Label for the button"
-          }
-        }
-      }
+      "items": {}
     }
   ]
 }

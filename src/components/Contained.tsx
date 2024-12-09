@@ -12,7 +12,9 @@ export async function Contained({
   as: Component = "div",
 }: ContainedProps) {
   return (
-    <Component className={twMerge("container mx-auto px-3 lg:px-6", className)}>
+    <Component
+      className={twMerge("container mx-auto px-6 lg:px-10", className)}
+    >
       {children}
     </Component>
   );

@@ -10,13 +10,21 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@icons-pack/react-simple-icons": "^10.2.0",
+    "@nextui-org/react": "^2.4.8",
     "@prismicio/client": "^7.11.0",
     "@prismicio/next": "^1.7.0",
     "@prismicio/react": "^2.9.0",
+    "@radix-ui/react-hover-card": "^1.1.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^11.12.0",
+    "lucide-react": "^0.454.0",
     "next": "14.2.15",
+    "next-themes": "^0.4.3",
+    "qss": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.3"
+    "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.51",

@@ -3,17 +3,6 @@
 		"__TYPE__": "SharedSliceContent",
 		"variation": "default",
 		"primary": {
-			"text": {
-				"__TYPE__": "StructuredTextContent",
-				"value": [
-					{
-						"type": "paragraph",
-						"content": {
-							"text": "Ad nostrud nostrud voluptate duis quis anim officia excepteur nisi sit labore duis. Exercitation non cupidatat pariatur."
-						}
-					}
-				]
-			},
 			"image": {
 				"origin": {
 					"id": "main",
@@ -36,31 +25,49 @@
 				"alt": null,
 				"__TYPE__": "ImageContent",
 				"thumbnails": {}
+			},
+			"text": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Nostrud id amet anim est nostrud tempor dolore et. Qui cillum incididunt aliquip do ea qui enim duis nulla nostrud magna in elit. Lorem deserunt exercitation esse id qui aliquip exercitation eiusmod esse dolor sunt est."
+						}
+					}
+				]
+			},
+			"subtitle": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "Fullstack Developer"
+			},
+			"current_work": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Dolore officia pariatur velit pariatur nostrud tempor enim labore velit. Anim est exercitation id id consectetur nostrud nulla ex ad aliqua elit. Deserunt sit veniam Lorem."
+						}
+					}
+				]
+			},
+			"hi_message": {
+				"__TYPE__": "FieldContent",
+				"value": "climb",
+				"type": "Text"
+			},
+			"subtitle_2": {
+				"__TYPE__": "FieldContent",
+				"value": "cell",
+				"type": "Text"
 			}
 		},
 		"items": [
 			{
 				"__TYPE__": "GroupItemContent",
-				"value": [
-					[
-						"button_link",
-						{
-							"__TYPE__": "LinkContent",
-							"value": {
-								"__TYPE__": "ExternalLink",
-								"url": "http://google.com"
-							}
-						}
-					],
-					[
-						"button_label",
-						{
-							"__TYPE__": "FieldContent",
-							"value": "brought",
-							"type": "Text"
-						}
-					]
-				]
+				"value": []
 			}
 		]
 	}

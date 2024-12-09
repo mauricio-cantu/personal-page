@@ -212,6 +212,8 @@ interface PageDocumentData {
 export type PageDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<PageDocumentData>, "page", Lang>;
 
+type PostDocumentDataSlicesSlice = never;
+
 /**
  * Content for Post documents
  */
@@ -248,6 +250,17 @@ interface PostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
+
+  /**
+   * `slices` field in *Post*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<PostDocumentDataSlicesSlice>;
 }
 
 /**
@@ -332,13 +345,57 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
+/**
+ * Content for Social Links documents
+ */
+interface SocialLinksDocumentData {
+  /**
+   * LinkedIn field in *Social Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_links.linkedin
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  linkedin: prismic.LinkField;
+
+  /**
+   * GitHub field in *Social Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: social_links.github
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  github: prismic.LinkField;
+}
+
+/**
+ * Social Links document from Prismic
+ *
+ * - **API ID**: `social_links`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type SocialLinksDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<SocialLinksDocumentData>,
+    "social_links",
+    Lang
+  >;
+
 export type AllDocumentTypes =
   | AuthorDocument
   | FooterDocument
   | HomeDocument
   | PageDocument
   | PostDocument
-  | SettingsDocument;
+  | SettingsDocument
+  | SocialLinksDocument;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -355,39 +412,54 @@ export interface HeroSliceDefaultPrimary {
   image: prismic.ImageField<never>;
 
   /**
-   * Text field in *Hero → Default → Primary*
+   * Myself description field in *Hero → Default → Primary*
    *
    * - **Field Type**: Rich Text
-   * - **Placeholder**: Text displayed adjacent to image
+   * - **Placeholder**: *None*
    * - **API ID Path**: hero.default.primary.text
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   text: prismic.RichTextField;
-}
-
-/**
- * Primary content in *Hero → Items*
- */
-export interface HeroSliceDefaultItem {
-  /**
-   * Button Link field in *Hero → Items*
-   *
-   * - **Field Type**: Link
-   * - **Placeholder**: Link for the button
-   * - **API ID Path**: hero.items[].button_link
-   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
-   */
-  button_link: prismic.LinkField;
 
   /**
-   * Button Label field in *Hero → Items*
+   * Subtitle field in *Hero → Default → Primary*
    *
    * - **Field Type**: Text
-   * - **Placeholder**: Label for the button
-   * - **API ID Path**: hero.items[].button_label
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.subtitle
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  button_label: prismic.KeyTextField;
+  subtitle: prismic.KeyTextField;
+
+  /**
+   * Current work field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.current_work
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  current_work: prismic.RichTextField;
+
+  /**
+   * Hi message field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Text above my name
+   * - **API ID Path**: hero.default.primary.hi_message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  hi_message: prismic.KeyTextField;
+
+  /**
+   * Subtitle 2 field in *Hero → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: hero.default.primary.subtitle_2
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  subtitle_2: prismic.KeyTextField;
 }
 
 /**
@@ -400,7 +472,7 @@ export interface HeroSliceDefaultItem {
 export type HeroSliceDefault = prismic.SharedSliceVariation<
   "default",
   Simplify<HeroSliceDefaultPrimary>,
-  Simplify<HeroSliceDefaultItem>
+  never
 >;
 
 /**
@@ -493,13 +565,15 @@ declare module "@prismicio/client" {
       PageDocumentDataSlicesSlice,
       PostDocument,
       PostDocumentData,
+      PostDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationItem,
+      SocialLinksDocument,
+      SocialLinksDocumentData,
       AllDocumentTypes,
       HeroSlice,
       HeroSliceDefaultPrimary,
-      HeroSliceDefaultItem,
       HeroSliceVariation,
       HeroSliceDefault,
       TextSlice,

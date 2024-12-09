@@ -1,0 +1,31 @@
+{
+  "format": "custom",
+  "id": "social_links",
+  "label": "Social Links",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "linkedin": {
+        "type": "Link",
+        "config": {
+          "label": "LinkedIn",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null,
+          "allowText": true
+        }
+      },
+      "github": {
+        "type": "Link",
+        "config": {
+          "label": "GitHub",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "select": null,
+          "allowText": true
+        }
+      }
+    }
+  }
+}
