@@ -1,5 +1,5 @@
 import { getSettings, getSocialLinks } from "@/api/prismic/settings";
-import { Link } from "@nextui-org/react";
+import { Link } from "@heroui/react";
 import { asLink } from "@prismicio/client";
 import { PrismicText } from "@prismicio/react";
 import { SocialLinksDocumentData } from "../../prismicio-types";

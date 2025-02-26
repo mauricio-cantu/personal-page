@@ -11,7 +11,7 @@ import {
   NavbarMenu,
   NavbarMenuItem,
   NavbarMenuToggle,
-} from "@nextui-org/react";
+} from "@heroui/react";
 import { asLink } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { Menu, X } from "lucide-react";

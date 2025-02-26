@@ -1,7 +1,7 @@
 import { asLink, LinkField, RichTextField } from "@prismicio/client";
 import { PrismicRichText } from "@prismicio/react";
 
-import { Link } from "@nextui-org/react";
+import { Link } from "@heroui/react";
 import React, { ReactNode } from "react";
 import { LinkPreview } from "./LinkPreview";
 

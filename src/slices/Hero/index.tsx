@@ -2,7 +2,7 @@
 
 import { Contained } from "@/components/Contained";
 import { LinkPreview } from "@/components/LinkPreview";
-import { Divider, Link } from "@nextui-org/react";
+import { Divider, Link } from "@heroui/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";

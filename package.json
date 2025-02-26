@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^10.2.0",
-    "@nextui-org/react": "^2.4.8",
+    "@heroui/react": "2.7.2",
     "@prismicio/client": "^7.11.0",
     "@prismicio/next": "^1.7.0",
     "@prismicio/react": "^2.9.0",

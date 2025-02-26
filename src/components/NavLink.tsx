@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Link, LinkProps } from "@nextui-org/react";
+import { Link, LinkProps } from "@heroui/react";
 import { asLink, LinkField } from "@prismicio/client";
 import { PrismicNextLink } from "@prismicio/next";
 import { usePathname } from "next/navigation";

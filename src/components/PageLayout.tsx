@@ -1,4 +1,4 @@
-import { Divider } from "@nextui-org/react";
+import { Divider } from "@heroui/react";
 import { ReactNode } from "react";
 import { GenericPageDocumentData } from "../../prismicio-types";
 import { Contained } from "./Contained";
