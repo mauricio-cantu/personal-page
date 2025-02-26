@@ -18,7 +18,7 @@ export async function Footer() {
           </span>
         </li>
         <li>
-          <span className="text-xs">mauriciocantujoc@gmail.com</span>
+          <span className="text-xs">{settings.data.email}</span>
         </li>
         {Object.keys(socials.data).map((k, i) => {
           const socialKey = k as keyof SocialLinksDocumentData;

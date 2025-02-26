@@ -399,6 +399,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#boolean
    */
   maintenance_mode: prismic.BooleanField;
+
+  /**
+   * Email field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.email
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  email: prismic.KeyTextField;
 }
 
 /**

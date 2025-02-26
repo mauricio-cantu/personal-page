@@ -41,6 +41,13 @@
           "placeholder_true": "true",
           "default_value": false
         }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "Email",
+          "placeholder": ""
+        }
       }
     }
   }
