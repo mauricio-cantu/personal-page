@@ -44,7 +44,7 @@ export default function Header({ socials, navigationItems }: HeaderProps) {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      classNames={{ wrapper: "max-w-screen-xl" }}
+      classNames={{ wrapper: "max-w-screen-xl mb-2" }}
     >
       <NavbarContent justify="start">
         <NavbarMenuToggle
@@ -54,7 +54,7 @@ export default function Header({ socials, navigationItems }: HeaderProps) {
         />
         <NavbarBrand>
           <Link
-            className="text-foreground font-sign text-2xl transition-all hover:scale-110"
+            className="font-sign text-2xl text-foreground transition-all hover:scale-110"
             href={"/"}
             as={PrismicNextLink}
           >

@@ -1,7 +1,7 @@
 {
   "format": "page",
-  "id": "post",
-  "label": "Post",
+  "id": "generic_page",
+  "label": "Generic Page",
   "repeatable": true,
   "status": true,
   "json": {
@@ -16,32 +16,21 @@
         "type": "Text",
         "config": {
           "label": "Title",
-          "placeholder": "Post's title"
+          "placeholder": ""
         }
       },
       "description": {
         "type": "Text",
         "config": {
-          "label": "description",
+          "label": "Description",
           "placeholder": ""
-        }
-      },
-      "publish_date": {
-        "type": "Date",
-        "config": {
-          "label": "Publish Date",
-          "placeholder": "Date to override default publish date from the page"
         }
       },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {
-            "text": {
-              "type": "SharedSlice"
-            }
-          }
+          "choices": {}
         }
       }
     },

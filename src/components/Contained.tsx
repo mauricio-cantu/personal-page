@@ -13,7 +13,7 @@ export async function Contained({
 }: ContainedProps) {
   return (
     <Component
-      className={twMerge("container mx-auto px-6 lg:px-10", className)}
+      className={twMerge("container mx-auto max-w-screen-xl px-6", className)}
     >
       {children}
     </Component>

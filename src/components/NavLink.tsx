@@ -15,12 +15,18 @@ export interface NavLinkProps {
 export function NavLink({ linkField, className, linkProps }: NavLinkProps) {
   const pathname = usePathname();
   const link = asLink(linkField);
+  // @ts-expect-error 'target' prop exists but it's not defined in the lib
+  const isExternal = linkField.target === "_blank";
+
   const isActive = pathname === `/${link}`;
+
   return (
     <Link
       color={isActive ? "primary" : "foreground"}
       className={cn("lowercase", className)}
       field={linkField}
+      isExternal={isExternal}
+      showAnchorIcon={isExternal}
       as={PrismicNextLink}
       href={link!}
       {...linkProps}

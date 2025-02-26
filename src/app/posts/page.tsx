@@ -1,20 +1,14 @@
-// src/app/[uid]/page.tsx
-
 import { asText } from "@prismicio/client";
-import { SliceZone } from "@prismicio/react";
 import { notFound } from "next/navigation";
 
 import { getSettings } from "@/api/prismic/settings";
 import { PageLayout } from "@/components/PageLayout";
 import { createClient } from "@/prismicio";
-import { components } from "@/slices";
 
-type Params = { uid: string };
-
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata() {
   const client = createClient();
   const page = await client
-    .getByUID("generic_page", params.uid)
+    .getByUID("generic_page", "posts")
     .catch(() => notFound());
   const settings = await getSettings();
 
@@ -24,13 +18,26 @@ export async function generateMetadata({ params }: { params: Params }) {
   };
 }
 
-export default async function Page({ params }: { params: Params }) {
+export default async function Page() {
   const client = createClient();
-  const page = await client.getByUID("generic_page", params.uid);
+  const page = await client.getByUID("generic_page", "posts");
+  const posts = await client.getAllByType("post", {
+    orderings: [
+      { field: "my.post.publish_date", direction: "desc" },
+      { field: "document.first_publication_date", direction: "desc" },
+    ],
+  });
 
   return (
     <PageLayout data={page.data}>
-      <SliceZone slices={page.data.slices} components={components} />
+      <ul>
+        {posts.map((post) => (
+          <li key={post.id}>
+            <h2>{post.data.title}</h2>
+            <p>{post.data.description}</p>
+          </li>
+        ))}
+      </ul>
     </PageLayout>
   );
 }

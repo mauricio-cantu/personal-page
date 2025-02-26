@@ -27,7 +27,7 @@
     "tailwind-merge": "^2.5.4"
   },
   "devDependencies": {
-    "@slicemachine/adapter-next": "^0.3.51",
+    "@slicemachine/adapter-next": "^0.3.67",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
@@ -37,7 +37,7 @@
     "postcss": "^8",
     "prettier": "^3.3.3",
     "prettier-plugin-tailwindcss": "^0.6.8",
-    "slice-machine-ui": "^2.8.1",
+    "slice-machine-ui": "^2.13.0",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

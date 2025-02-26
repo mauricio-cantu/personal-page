@@ -19,16 +19,16 @@ export default function Hero({ slice }: HeroProps): JSX.Element {
   return (
     <Contained className="relative flex max-w-[900px] flex-grow flex-col items-center justify-center gap-7 py-10 md:flex-row">
       <div>
-        <p className="md:text-medium text-xs">{slice.primary.hi_message}</p>
-        <h2 className="to-foreground-900 bg-gradient-to-br from-primary bg-clip-text text-4xl font-bold tracking-tighter text-primary text-transparent md:text-7xl">
+        <p className="text-xs md:text-medium">{slice.primary.hi_message}</p>
+        <h2 className="bg-gradient-to-br from-primary to-foreground-900 bg-clip-text text-4xl font-bold tracking-tighter text-primary text-transparent md:text-7xl">
           Maurício Cantú
         </h2>
 
         <div className="flex flex-col gap-2">
           <p className="text-lg md:text-xl">{slice.primary.subtitle}</p>
-          <Divider className="bg-foreground h-1" />
-          <p className="text-sm">{slice.primary.subtitle_2}</p>
-          <div className="text-sm">
+          <Divider className="h-[0.8px] bg-foreground/40" />
+          <p className="text-sm lg:text-medium">{slice.primary.subtitle_2}</p>
+          <div className="text-sm lg:text-medium">
             <PrismicRichText
               components={{
                 hyperlink: ({ node, children }) => {
@@ -37,7 +37,7 @@ export default function Hero({ slice }: HeroProps): JSX.Element {
                       <Link
                         isExternal
                         underline="hover"
-                        className="text-sm"
+                        className="text-sm lg:text-medium"
                         showAnchorIcon
                         href={node.data.url}
                       >
@@ -51,7 +51,7 @@ export default function Hero({ slice }: HeroProps): JSX.Element {
             ></PrismicRichText>
           </div>
 
-          <div className="relative text-sm">
+          <div className="relative text-sm lg:text-medium">
             <PrismicRichText
               components={{
                 strong: ({ children }) => (
