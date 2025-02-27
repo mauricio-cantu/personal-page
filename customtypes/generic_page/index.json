@@ -30,7 +30,11 @@
         "type": "Slices",
         "fieldset": "Slice Zone",
         "config": {
-          "choices": {}
+          "choices": {
+            "coming_soon": {
+              "type": "SharedSlice"
+            }
+          }
         }
       }
     },

@@ -1,0 +1,26 @@
+{
+  "id": "coming_soon",
+  "type": "SharedSlice",
+  "name": "ComingSoon",
+  "description": "ComingSoon",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "coming_soon": {
+          "type": "Text",
+          "config": {
+            "label": "Coming Soon",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

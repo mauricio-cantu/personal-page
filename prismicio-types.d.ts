@@ -105,7 +105,7 @@ export type FooterDocument<Lang extends string = string> =
     Lang
   >;
 
-type GenericPageDocumentDataSlicesSlice = never;
+type GenericPageDocumentDataSlicesSlice = ComingSoonSlice;
 
 /**
  * Content for Generic Page documents
@@ -498,6 +498,51 @@ export type AllDocumentTypes =
   | SocialLinksDocument;
 
 /**
+ * Primary content in *ComingSoon → Default → Primary*
+ */
+export interface ComingSoonSliceDefaultPrimary {
+  /**
+   * Coming Soon field in *ComingSoon → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: coming_soon.default.primary.coming_soon
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  coming_soon: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for ComingSoon Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ComingSoonSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ComingSoonSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ComingSoon*
+ */
+type ComingSoonSliceVariation = ComingSoonSliceDefault;
+
+/**
+ * ComingSoon Shared Slice
+ *
+ * - **API ID**: `coming_soon`
+ * - **Description**: ComingSoon
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ComingSoonSlice = prismic.SharedSlice<
+  "coming_soon",
+  ComingSoonSliceVariation
+>;
+
+/**
  * Primary content in *Hero → Default → Primary*
  */
 export interface HeroSliceDefaultPrimary {
@@ -672,6 +717,10 @@ declare module "@prismicio/client" {
       SocialLinksDocument,
       SocialLinksDocumentData,
       AllDocumentTypes,
+      ComingSoonSlice,
+      ComingSoonSliceDefaultPrimary,
+      ComingSoonSliceVariation,
+      ComingSoonSliceDefault,
       HeroSlice,
       HeroSliceDefaultPrimary,
       HeroSliceVariation,

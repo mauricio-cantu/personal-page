@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"coming_soon": {
+				"__TYPE__": "FieldContent",
+				"value": "potatoes",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]
