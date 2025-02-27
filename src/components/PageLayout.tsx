@@ -11,7 +11,7 @@ export function PageLayout({
   children: ReactNode;
 }) {
   return (
-    <Contained>
+    <Contained className="flex h-full flex-col">
       <div className="flex flex-col gap-4">
         <h1 className="text-2xl font-bold lg:text-4xl">{data.title} </h1>
         {!!data.description && (
