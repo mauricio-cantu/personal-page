@@ -42,3 +42,12 @@ export default async function Page({ params }: { params: Params }) {
     </Contained>
   );
 }
+
+export async function generateStaticParams() {
+  const client = createClient();
+  const pages = await client.getAllByType("post");
+
+  return pages.map((page) => {
+    return { uid: page.uid };
+  });
+}
