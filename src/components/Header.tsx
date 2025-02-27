@@ -38,6 +38,7 @@ export default function Header({ socials, navigationItems }: HeaderProps) {
     if (isMenuOpen) {
       setIsMenuOpen(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname]);
 
   return (
