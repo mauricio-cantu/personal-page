@@ -293,6 +293,17 @@ interface PostDocumentData {
   publish_date: prismic.DateField;
 
   /**
+   * Thumbnail field in *Post*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: post.thumbnail
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  thumbnail: prismic.ImageField<never>;
+
+  /**
    * Slice Zone field in *Post*
    *
    * - **Field Type**: Slice Zone

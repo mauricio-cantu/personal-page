@@ -33,6 +33,17 @@
           "placeholder": "Date to override default publish date from the page"
         }
       },
+      "thumbnail": {
+        "type": "Image",
+        "config": {
+          "label": "Thumbnail",
+          "constraint": {
+            "width": "",
+            "height": ""
+          },
+          "thumbnails": []
+        }
+      },
       "slices": {
         "type": "Slices",
         "fieldset": "Slice Zone",

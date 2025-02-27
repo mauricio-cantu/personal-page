@@ -9,7 +9,7 @@ export async function Footer() {
   const socials = await getSocialLinks();
 
   return (
-    <footer className="mt-5 border-t border-foreground/40 px-6 py-10">
+    <footer className="mt-10 border-t border-foreground/40 px-6 py-10">
       <ul className="flex list-none flex-col items-center gap-1">
         <li>
           <span className="text-sm">
