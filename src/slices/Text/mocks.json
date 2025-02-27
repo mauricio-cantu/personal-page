@@ -9,8 +9,26 @@
 					{
 						"type": "paragraph",
 						"content": {
-							"text": "Mollit reprehenderit velit Lorem laboris. Adipisicing tempor nulla irure eiusmod mollit in sit laborum commodo minim in. Id eu commodo enim mollit non dolor anim in."
-						}
+							"text": "Mollit reprehenderit velit Lorem laboris. Adipisicing tempor nulla irure eiusmod mollit in sit laborum commodo minim in. Id eu commodo enim mollit non dolor anim in.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "",
+							"spans": []
+						},
+						"direction": "ltr"
 					}
 				]
 			}
