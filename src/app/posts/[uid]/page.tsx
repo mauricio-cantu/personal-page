@@ -26,7 +26,7 @@ export default async function Page({ params }: { params: Params }) {
       <div className="grid w-full gap-3 border-b border-foreground-900/25 py-5 align-middle">
         <h1 className="text-3xl font-bold md:text-5xl">{page.data.title}</h1>
         {!!page.data.description && (
-          <p className="text-sm md:text-medium">{page.data.description}</p>
+          <p className="text-medium">{page.data.description}</p>
         )}
         <p className="text-sm">
           By Maurício Cantú

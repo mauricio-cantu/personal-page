@@ -31,9 +31,9 @@ const textFieldComponents = {
     <li className="mb-1 list-disc pl-1 md:pl-2">{children}</li>
   ),
   preformatted: ({ children }: { children: React.ReactNode }) => (
-    <pre className="mb-7 rounded bg-slate-200 p-4 text-sm md:p-8 md:text-lg">
-      <code className="text-zinc-950">{children}</code>
-    </pre>
+    <code className="mb-7 block rounded bg-slate-200 p-4 text-sm text-zinc-950 md:p-6 md:text-lg">
+      {children}
+    </code>
   ),
   strong: ({ children }: { children: React.ReactNode }) => (
     <strong className="font-semibold">{children}</strong>

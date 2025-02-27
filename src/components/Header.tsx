@@ -45,7 +45,7 @@ export default function Header({ socials, navigationItems }: HeaderProps) {
     <Navbar
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
-      classNames={{ wrapper: "max-w-screen-xl " }}
+      classNames={{ wrapper: "max-w-screen-xl", base: "mb-3 md:mb-10" }}
     >
       <NavbarContent justify="start">
         <NavbarMenuToggle

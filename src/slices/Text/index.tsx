@@ -16,7 +16,7 @@ export default function Text({ slice }: TextProps): JSX.Element {
   return (
     <>
       {prismic.isFilled.richText(slice.primary.content) && (
-        <div className="font-serif leading-relaxed md:text-xl md:leading-relaxed">
+        <div className="font-serif text-medium leading-relaxed md:text-xl md:leading-relaxed">
           <PrismicRichTextWrapper field={slice.primary.content} />
         </div>
       )}
