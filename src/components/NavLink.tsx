@@ -28,7 +28,7 @@ export function NavLink({ linkField, className, linkProps }: NavLinkProps) {
       isExternal={isExternal}
       showAnchorIcon={isExternal}
       as={PrismicNextLink}
-      href={`/${link!}`}
+      href={isExternal ? link! : `/${link!}`}
       {...linkProps}
     >
       {linkField.text}
