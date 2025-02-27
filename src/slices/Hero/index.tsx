@@ -1,12 +1,12 @@
 // src/slices/Hero/index.tsx
 
+import EncoraLogo from "@/assets/encora-logo.jpg";
 import { Contained } from "@/components/Contained";
 import { LinkPreview } from "@/components/LinkPreview";
 import { Divider, Link } from "@heroui/react";
 import { Content } from "@prismicio/client";
 import { PrismicNextImage } from "@prismicio/next";
 import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
-
 /**
  * Props for `Hero`.
  */
@@ -33,7 +33,11 @@ export default function Hero({ slice }: HeroProps): JSX.Element {
               components={{
                 hyperlink: ({ node, children }) => {
                   return (
-                    <LinkPreview url={node.data.url!}>
+                    <LinkPreview
+                      url={node.data.url!}
+                      isStatic={true}
+                      imageSrc={EncoraLogo.src}
+                    >
                       <Link
                         isExternal
                         underline="hover"
