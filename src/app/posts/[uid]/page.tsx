@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: Params }) {
   const settings = await client.getSingle("settings");
 
   return {
-    title: `${page.data.title} | ${asText(settings.data.site_title)}`,
-    description: page.data.description,
+    title: `${page.data.meta_title} | ${asText(settings.data.site_title)}`,
+    description: page.data.meta_description,
   };
 }
 

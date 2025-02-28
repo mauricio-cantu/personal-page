@@ -10,6 +10,8 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@ai-sdk/google": "^1.1.17",
+    "@ai-sdk/groq": "^1.1.11",
     "@heroui/react": "2.7.2",
     "@icons-pack/react-simple-icons": "^10.2.0",
     "@prismicio/client": "^7.11.0",
@@ -17,6 +19,7 @@
     "@prismicio/react": "^2.9.0",
     "@radix-ui/react-hover-card": "^1.1.2",
     "@vercel/analytics": "^1.5.0",
+    "ai": "^4.1.46",
     "clsx": "^2.1.1",
     "framer-motion": "^11.12.0",
     "lucide-react": "^0.454.0",
@@ -25,7 +28,8 @@
     "qss": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
-    "tailwind-merge": "^2.5.4"
+    "tailwind-merge": "^2.5.4",
+    "zod": "^3.24.2"
   },
   "devDependencies": {
     "@slicemachine/adapter-next": "^0.3.67",

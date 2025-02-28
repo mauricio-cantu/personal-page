@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Params }) {
 
   return {
     title: `${page.data.title} | ${asText(settings.data.site_title)}`,
-    description: `${page.data.description} | ${asText(settings.data.site_title)}`,
+    description: `${page.data.meta_description}`,
   };
 }
 

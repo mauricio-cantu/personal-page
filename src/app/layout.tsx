@@ -31,3 +31,9 @@ export default async function RootLayout({
     </html>
   );
 }
+
+export function generateMetadata() {
+  return {
+    title: "TESTEE",
+  };
+}

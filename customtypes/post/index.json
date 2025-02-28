@@ -38,8 +38,8 @@
         "config": {
           "label": "Thumbnail",
           "constraint": {
-            "width": "",
-            "height": ""
+            "width": null,
+            "height": null
           },
           "thumbnails": []
         }

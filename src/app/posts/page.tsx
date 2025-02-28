@@ -1,24 +1,22 @@
-import { asDate, asText } from "@prismicio/client";
-import { notFound } from "next/navigation";
+import { asDate } from "@prismicio/client";
 
-import { getSettings } from "@/api/prismic/settings";
 import { PageLayout } from "@/components/PageLayout";
 import { dateFormatter } from "@/lib/utils";
 import { createClient } from "@/prismicio";
 import { PrismicNextLink } from "@prismicio/next";
 
-export async function generateMetadata() {
-  const client = createClient();
-  const page = await client
-    .getByUID("generic_page", "posts")
-    .catch(() => notFound());
-  const settings = await getSettings();
+// export async function generateMetadata() {
+//   const client = createClient();
+//   const page = await client
+//     .getByUID("generic_page", "posts")
+//     .catch(() => notFound());
+//   const settings = await getSettings();
 
-  return {
-    title: `${page.data.title} | ${asText(settings.data.site_title)}`,
-    description: page.data.meta_description,
-  };
-}
+//   return {
+//     title: `${page.data.title} | ${asText(settings.data.site_title)}`,
+//     description: page.data.meta_description,
+//   };
+// }
 
 export default async function Page() {
   const client = createClient();
