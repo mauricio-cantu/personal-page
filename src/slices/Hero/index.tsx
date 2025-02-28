@@ -72,7 +72,7 @@ export default function Hero({ slice }: HeroProps): JSX.Element {
       </div>
       <PrismicNextImage
         field={slice.primary.image}
-        className="h-[240px] w-min md:h-[360px]"
+        className="h-[240px] w-min rounded-md shadow-md shadow-zinc-600/50 transition-transform hover:scale-105 md:h-[360px]"
       />
     </Contained>
   );
