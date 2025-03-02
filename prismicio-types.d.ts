@@ -60,6 +60,82 @@ interface AuthorDocumentData {
 export type AuthorDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithUID<Simplify<AuthorDocumentData>, "author", Lang>;
 
+/**
+ * Content for Certification documents
+ */
+interface CertificationDocumentData {
+  /**
+   * Image field in *Certification*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certification.image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  image: prismic.ImageField<never>;
+
+  /**
+   * Title field in *Certification*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certification.title
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Accomplished date field in *Certification*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certification.accomplished_date
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  accomplished_date: prismic.DateField;
+
+  /**
+   * Link field in *Certification*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certification.link
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  link: prismic.LinkField<string, string, unknown, prismic.FieldState, never>;
+
+  /**
+   * Issued By field in *Certification*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: certification.issued_by
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  issued_by: prismic.KeyTextField;
+}
+
+/**
+ * Certification document from Prismic
+ *
+ * - **API ID**: `certification`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type CertificationDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<
+    Simplify<CertificationDocumentData>,
+    "certification",
+    Lang
+  >;
+
 type FooterDocumentDataSlicesSlice = TextSlice;
 
 /**
@@ -490,6 +566,7 @@ export type SocialLinksDocument<Lang extends string = string> =
 
 export type AllDocumentTypes =
   | AuthorDocument
+  | CertificationDocument
   | FooterDocument
   | GenericPageDocument
   | HomeDocument
@@ -699,6 +776,8 @@ declare module "@prismicio/client" {
     export type {
       AuthorDocument,
       AuthorDocumentData,
+      CertificationDocument,
+      CertificationDocumentData,
       FooterDocument,
       FooterDocumentData,
       FooterDocumentDataSlicesSlice,
