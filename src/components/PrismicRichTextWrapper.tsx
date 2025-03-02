@@ -46,8 +46,8 @@ const textFieldComponents = {
     node: { data: LinkField };
   }) => {
     const href = asLink(node.data);
-    // @ts-expect-error 'target' prop exists but it's not defined in the lib
-    const isExternal = node.data.target === "_blank";
+    const isExternal =
+      node.data.link_type === "Web" && node.data.target === "_blank";
     return (
       <LinkPreview url={href!}>
         <Link

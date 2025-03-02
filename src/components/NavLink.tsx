@@ -15,8 +15,10 @@ export interface NavLinkProps {
 export function NavLink({ linkField, className, linkProps }: NavLinkProps) {
   const pathname = usePathname();
   const link = asLink(linkField);
-  // @ts-expect-error 'target' prop exists but it's not defined in the lib
-  const isExternal = linkField.target === "_blank";
+
+  const isExternal =
+    (linkField.link_type === "Web" && linkField.target === "_blank") ||
+    linkField.link_type == "Media";
 
   const isActive = pathname === `/${link}`;
 
