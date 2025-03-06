@@ -420,6 +420,17 @@ interface PostDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   meta_image: prismic.ImageField<never>;
+
+  /**
+   * SEO Keywords field in *Post*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Keywords separated by comma
+   * - **API ID Path**: post.seo_keywords
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  seo_keywords: prismic.KeyTextField;
 }
 
 /**
@@ -519,6 +530,17 @@ interface SettingsDocumentData {
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   email: prismic.KeyTextField;
+
+  /**
+   * Site SEO Keywords field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: Keywords separated by comma
+   * - **API ID Path**: settings.seo_keywords
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  seo_keywords: prismic.KeyTextField;
 }
 
 /**

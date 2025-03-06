@@ -63,6 +63,13 @@
           "label": "Email",
           "placeholder": ""
         }
+      },
+      "seo_keywords": {
+        "type": "Text",
+        "config": {
+          "label": "Site SEO Keywords",
+          "placeholder": "Keywords separated by comma"
+        }
       }
     }
   }

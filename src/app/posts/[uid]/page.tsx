@@ -21,6 +21,7 @@ export async function generateMetadata(
   return {
     title: `${page.data.title} | ${asText(settings.data.site_title)}`,
     description: page.data.description,
+    keywords: `${[page.data.seo_keywords, parentMetadata.keywords].join(", ")}`,
     openGraph: {
       type: "article",
       images: [
