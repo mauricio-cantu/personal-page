@@ -15,6 +15,21 @@
           "single": "heading3"
         }
       },
+      "default_meta_tag_image": {
+        "type": "Image",
+        "config": {
+          "label": "Default Meta Tag Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "default_meta_tag_description": {
+        "type": "Text",
+        "config": {
+          "label": "Default Meta Tag Description",
+          "placeholder": ""
+        }
+      },
       "navigation": {
         "type": "Group",
         "config": {

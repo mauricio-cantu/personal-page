@@ -4,17 +4,42 @@ import { createClient } from "@/prismicio";
 import { components } from "@/slices";
 import { asDate, asText } from "@prismicio/client";
 import { SliceZone } from "@prismicio/react";
+import { Metadata, ResolvingMetadata } from "next";
 
 type Params = { uid: string };
 
-export async function generateMetadata({ params }: { params: Params }) {
+export async function generateMetadata(
+  { params }: { params: Params },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
   const client = createClient();
   const page = await client.getByUID("post", params.uid);
   const settings = await client.getSingle("settings");
 
+  const parentMetadata = await parent;
+
   return {
     title: `${page.data.title} | ${asText(settings.data.site_title)}`,
     description: page.data.description,
+    openGraph: {
+      type: "article",
+      images: [
+        page.data.thumbnail.url || "",
+        ...(parentMetadata.openGraph?.images || []),
+      ],
+      title: `${page.data.title} | ${asText(settings.data.site_title)}`,
+      description: page.data.description || "",
+      url: `https://mcjcm.com/posts/${params.uid}`,
+    },
+    twitter: {
+      images: [
+        page.data.thumbnail.url || "",
+        ...(parentMetadata.openGraph?.images || []),
+      ],
+      title: `${page.data.title} | ${asText(settings.data.site_title)}`,
+      description: page.data.description || "",
+      site: `https://mcjcm.com/posts/${params.uid}`,
+    },
   };
 }
 

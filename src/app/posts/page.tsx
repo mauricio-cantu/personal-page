@@ -16,7 +16,7 @@ export async function generateMetadata() {
 
   return {
     title: `${page.data.title} | ${asText(settings.data.site_title)}`,
-    description: page.data.meta_description,
+    description: page.data.description,
   };
 }
 

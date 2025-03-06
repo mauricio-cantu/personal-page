@@ -1,12 +1,40 @@
 import { getSettings, getSocialLinks } from "@/api/prismic/settings";
 import { Footer } from "@/components/Footer";
 import Header from "@/components/Header";
-import { repositoryName } from "@/prismicio";
+import { createClient, repositoryName } from "@/prismicio";
+import { asText } from "@prismicio/client";
 import { PrismicPreview } from "@prismicio/next";
 import { Analytics } from "@vercel/analytics/react";
+import { Metadata } from "next";
 import { indieFlower, lato } from "./fonts/localFont";
 import "./globals.css";
 import { Providers } from "./providers";
+
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+  const settings = await client.getSingle("settings");
+
+  return {
+    description: settings.data.default_meta_tag_description || "",
+    title: asText(settings.data.site_title),
+    openGraph: {
+      type: "website",
+      images: [settings.data.default_meta_tag_image.url || ""],
+      description: settings.data.default_meta_tag_description || "",
+      title: asText(settings.data.site_title),
+      url: "https://mcjcm.com",
+      siteName: asText(settings.data.site_title),
+    },
+    twitter: {
+      card: "summary_large_image",
+      creator: asText(settings.data.site_title),
+      images: [settings.data.default_meta_tag_image.url || ""],
+      description: settings.data.default_meta_tag_description || "",
+      title: asText(settings.data.site_title),
+      site: "https://mcjcm.com",
+    },
+  };
+}
 
 export default async function RootLayout({
   children,

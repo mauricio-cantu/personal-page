@@ -465,6 +465,28 @@ interface SettingsDocumentData {
   site_title: prismic.TitleField;
 
   /**
+   * Default Meta Tag Image field in *Settings*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.default_meta_tag_image
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  default_meta_tag_image: prismic.ImageField<never>;
+
+  /**
+   * Default Meta Tag Description field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.default_meta_tag_description
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  default_meta_tag_description: prismic.KeyTextField;
+
+  /**
    * Navigation field in *Settings*
    *
    * - **Field Type**: Group
