@@ -17,6 +17,9 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     description: settings.data.default_meta_tag_description || "",
     title: asText(settings.data.site_title),
+    verification: {
+      google: "FqxYXO_gAeT8g3rSwLf_mIQbflfbJFjW0bk3OYC02mw",
+    },
     openGraph: {
       type: "website",
       images: [settings.data.default_meta_tag_image.url || ""],
