@@ -19,7 +19,7 @@ export function CertificateCard({
     >
       <CardHeader className="flex gap-3">
         <PrismicNextImage
-          className="size-[80px]"
+          className="size-[80px] object-contain"
           field={certificate.data.image}
         />
         <div className="flex flex-col gap-1">
